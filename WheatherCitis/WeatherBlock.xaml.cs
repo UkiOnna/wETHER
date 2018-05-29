@@ -20,11 +20,11 @@ namespace WheatherCitis
     /// </summary>
     public partial class WeatherBlock : UserControl
     {
-        public WeatherBlock(string date,string temp,Image img)
+        public WeatherBlock(string date,string temp,BitmapImage img)
         {
             InitializeComponent();
             dateBox.Text = date;
-            iconWeather = img;
+            iconWeather.Source = img;
             temperatureBox.Text = temp;
         }
     }

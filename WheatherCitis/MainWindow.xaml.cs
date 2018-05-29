@@ -26,7 +26,7 @@ namespace WheatherCitis
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,23 +34,27 @@ namespace WheatherCitis
 
         private async void GetWheather(object sender, RoutedEventArgs e)
         {
+            stackPan.Children.Clear();
             var obj = await DownloadXml(cityBox.Text);
             if (obj == null)
             {
                 MessageBox.Show("Нет такого города");
             }
 
-            Image img = new Image();
-            foreach (var s in obj.Forecast.Forecastday)
+            else
             {
-                
-                var ms = await DownloadImage(s);
-                var bi = new BitmapImage();
-                bi.BeginInit();
-                bi.StreamSource = ms;
-                bi.EndInit();
-                img.Source = bi;
-                stackPan.Children.Add(new WeatherBlock(s.Date.ToString(), "+" + s.Day.Avgtemp_c, img));
+
+                foreach (var s in obj.Forecast.Forecastday)
+                {
+
+                    var ms = await DownloadImage(s);
+                    var bi = new BitmapImage();
+                    bi.BeginInit();
+                    bi.StreamSource = ms;
+                    bi.EndInit();
+                    // img.Source = bi;
+                    stackPan.Children.Add(new WeatherBlock(s.Date.ToString(), "+" + s.Day.Avgtemp_c, bi));
+                }
             }
             // ShowImage(bi);
             // textBlockDisc.Text = obj.explanation;
@@ -58,36 +62,36 @@ namespace WheatherCitis
 
         private Task<Root> DownloadXml(string city)
         {
-            
-            
-                return Task.Run(() =>
-                {
-                    string valueXml;
-                    Root newRoot;
+
+
+            return Task.Run(() =>
+            {
+                string valueXml;
+                Root newRoot;
 
                     //data = DateTime.ParseExact(data.Value.Date.ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
                     try
+                {
+                    using (var webClient = new WebClient())
                     {
-                        using (var webClient = new WebClient())
+                        webClient.Encoding = Encoding.UTF8;
+                        valueXml = webClient.DownloadString("http://api.apixu.com/v1/forecast.xml?key=02d3de968c424e20b5a74149172409%20&q=" + city + "&" + "days=7");
+                        XmlSerializer formatter = new XmlSerializer(typeof(Root));
+                        using (TextReader fs = new StringReader(valueXml))
                         {
-                            webClient.Encoding = Encoding.UTF8;
-                            valueXml = webClient.DownloadString("http://api.apixu.com/v1/forecast.xml?key=02d3de968c424e20b5a74149172409%20&q=" + city + "&" + "days=7");
-                            XmlSerializer formatter = new XmlSerializer(typeof(Root));
-                            using (TextReader fs = new StringReader(valueXml))
-                            {
-                                newRoot = (Root)formatter.Deserialize(fs);
-                                return newRoot;
-                            }
+                            newRoot = (Root)formatter.Deserialize(fs);
+                            return newRoot;
                         }
                     }
-                    catch
-                    {
-                        return null;
-                    }
+                }
+                catch
+                {
+                    return null;
+                }
 
-                });
-            
-            
+            });
+
+
         }
         private Task<MemoryStream> DownloadImage(Forecastday obj)
         {

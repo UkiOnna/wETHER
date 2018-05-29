@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WheatherCitis"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="1200">
+        Title="MainWindow" Height="500" Width="1200">
     <Grid>
-        <TextBox Name="cityBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="160,13,0,0" VerticalAlignment="Top" Width="75" Click="GetWheather"/>
-        <StackPanel Name="stackPan" HorizontalAlignment="Left" Height="425" Margin="10,84,0,0" VerticalAlignment="Top" Width="1172" Orientation="Horizontal"/>
+        <TextBox Name="cityBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="253" FontFamily="Segoe UI Semibold"/>
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="308,13,0,0" VerticalAlignment="Top" Width="75" Click="GetWheather" FontFamily="Segoe UI Semibold"/>
+
+        <StackPanel Name="stackPan" HorizontalAlignment="Left" Height="425" Margin="10,84,0,0" VerticalAlignment="Top" Width="1172" Orientation="Horizontal">
+            
+        </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="1192"/>
+        <TextBlock HorizontalAlignment="Left" Margin="723,10,0,0" TextWrapping="Wrap" Text="Города можно вводить на русском" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="16"/>
 
     </Grid>
 </Window>

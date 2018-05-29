@@ -53,7 +53,7 @@ namespace WheatherCitis
                     bi.StreamSource = ms;
                     bi.EndInit();
                     // img.Source = bi;
-                    stackPan.Children.Add(new WeatherBlock(s.Date.ToString(), "+" + s.Day.Avgtemp_c, bi));
+                    stackPan.Children.Add(new WeatherBlock(s.Date.ToString(), "+" + s.Day.AvgtempC, bi));
                 }
             }
             // ShowImage(bi);

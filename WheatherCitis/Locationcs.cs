@@ -21,9 +21,9 @@ namespace WheatherCitis
         [XmlElement(ElementName = "lon")]
         public string Lon { get; set; }
         [XmlElement(ElementName = "tz_id")]
-        public string Tz_id { get; set; }
+        public string TzId { get; set; }
         [XmlElement(ElementName = "localtime_epoch")]
-        public string Localtime_epoch { get; set; }
+        public string LocaltimeEpoch { get; set; }
         [XmlElement(ElementName = "localtime")]
         public string Localtime { get; set; }
     }

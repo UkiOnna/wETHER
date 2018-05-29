@@ -13,7 +13,7 @@ namespace WheatherCitis
         [XmlElement(ElementName = "date")]
         public string Date { get; set; }
         [XmlElement(ElementName = "date_epoch")]
-        public string Date_epoch { get; set; }
+        public string DateEpoch { get; set; }
         [XmlElement(ElementName = "day")]
         public Day Day { get; set; }
         [XmlElement(ElementName = "astro")]

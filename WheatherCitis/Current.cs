@@ -11,44 +11,44 @@ namespace WheatherCitis
     public class Current
     {
         [XmlElement(ElementName = "last_updated_epoch")]
-        public string Last_updated_epoch { get; set; }
+        public string Lastupdatedepoch { get; set; }
         [XmlElement(ElementName = "last_updated")]
-        public string Last_updated { get; set; }
+        public string Lastupdated { get; set; }
         [XmlElement(ElementName = "temp_c")]
-        public string Temp_c { get; set; }
+        public string Tempc { get; set; }
         [XmlElement(ElementName = "temp_f")]
-        public string Temp_f { get; set; }
+        public string Tempf { get; set; }
         [XmlElement(ElementName = "is_day")]
-        public string Is_day { get; set; }
+        public string Isday { get; set; }
         [XmlElement(ElementName = "condition")]
         public Condition Condition { get; set; }
         [XmlElement(ElementName = "wind_mph")]
-        public string Wind_mph { get; set; }
+        public string WindMph { get; set; }
         [XmlElement(ElementName = "wind_kph")]
-        public string Wind_kph { get; set; }
+        public string WindKph { get; set; }
         [XmlElement(ElementName = "wind_degree")]
-        public string Wind_degree { get; set; }
+        public string WindDegree { get; set; }
         [XmlElement(ElementName = "wind_dir")]
-        public string Wind_dir { get; set; }
+        public string WindDir { get; set; }
         [XmlElement(ElementName = "pressure_mb")]
-        public string Pressure_mb { get; set; }
+        public string PressureMb { get; set; }
         [XmlElement(ElementName = "pressure_in")]
-        public string Pressure_in { get; set; }
+        public string PressureIn { get; set; }
         [XmlElement(ElementName = "precip_mm")]
-        public string Precip_mm { get; set; }
+        public string PrecipMm { get; set; }
         [XmlElement(ElementName = "precip_in")]
-        public string Precip_in { get; set; }
+        public string PrecipIn { get; set; }
         [XmlElement(ElementName = "humidity")]
         public string Humidity { get; set; }
         [XmlElement(ElementName = "cloud")]
         public string Cloud { get; set; }
         [XmlElement(ElementName = "feelslike_c")]
-        public string Feelslike_c { get; set; }
+        public string FeelslikeC { get; set; }
         [XmlElement(ElementName = "feelslike_f")]
-        public string Feelslike_f { get; set; }
+        public string FeelslikeF { get; set; }
         [XmlElement(ElementName = "vis_km")]
-        public string Vis_km { get; set; }
+        public string VisKm { get; set; }
         [XmlElement(ElementName = "vis_miles")]
-        public string Vis_miles { get; set; }
+        public string VisMiles { get; set; }
     }
 }

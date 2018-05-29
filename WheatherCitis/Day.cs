@@ -11,29 +11,29 @@ namespace WheatherCitis
     public class Day
     {
         [XmlElement(ElementName = "maxtemp_c")]
-        public string Maxtemp_c { get; set; }
+        public string MaxtempC { get; set; }
         [XmlElement(ElementName = "maxtemp_f")]
-        public string Maxtemp_f { get; set; }
+        public string MaxtempF { get; set; }
         [XmlElement(ElementName = "mintemp_c")]
-        public string Mintemp_c { get; set; }
+        public string MintempC { get; set; }
         [XmlElement(ElementName = "mintemp_f")]
-        public string Mintemp_f { get; set; }
+        public string MintempF { get; set; }
         [XmlElement(ElementName = "avgtemp_c")]
-        public string Avgtemp_c { get; set; }
+        public string AvgtempC { get; set; }
         [XmlElement(ElementName = "avgtemp_f")]
-        public string Avgtemp_f { get; set; }
+        public string AvgtempF { get; set; }
         [XmlElement(ElementName = "maxwind_mph")]
-        public string Maxwind_mph { get; set; }
+        public string MaxwindMph { get; set; }
         [XmlElement(ElementName = "maxwind_kph")]
-        public string Maxwind_kph { get; set; }
+        public string MaxwindKph { get; set; }
         [XmlElement(ElementName = "totalprecip_mm")]
-        public string Totalprecip_mm { get; set; }
+        public string TotalprecipMm { get; set; }
         [XmlElement(ElementName = "totalprecip_in")]
-        public string Totalprecip_in { get; set; }
+        public string TotalprecipIn { get; set; }
         [XmlElement(ElementName = "avgvis_km")]
-        public string Avgvis_km { get; set; }
+        public string AvgvisKm { get; set; }
         [XmlElement(ElementName = "avgvis_miles")]
-        public string Avgvis_miles { get; set; }
+        public string AvgvisMiles { get; set; }
         [XmlElement(ElementName = "avghumidity")]
         public string Avghumidity { get; set; }
         [XmlElement(ElementName = "condition")]
